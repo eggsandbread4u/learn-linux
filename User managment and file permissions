@@ -1,0 +1,56 @@
+# User Management 
+---
+User management allows us to create multiples user on linux using user management tools. This helps our file stay private as users can not have access to other users file. A user is basically who 
+we are in a linux terminal while a group is basically identify which team we belong to and what permissions we have. A root user have privilege to not only control users but also have access to system file 
+while a standard user can mess around with personal files. Using Sudo command can actually give a standard user root privileges. '
+
+--- 
+# Tools 
+* Useradd: adds a user
+* Userdel: deletes a user
+* Usermod: Modifies existing user can change group ownership
+* passwd: creates password for a user
+
+---
+
+# File management
+---
+The purpose of file management is to allow who can read, write, and execute a file. It is very important to give permissions to specific class. There are three types of classes involved in this. 
+- User
+- Group 
+- Others
+we mainly give read, write, execute permissions to user. 
+
+# Understanding 'r,w,x'
+'r,w,x' is basically read, write, and execute. These permissions are given to our classes by using commands. 
+---
+# File management tools
+We can change permission by using chmod (change mode) it changes file permission but before we need to understand how permissions looks like by using command ls -l we see something like this
+* -drwx-xr-x 
+d represents directory, - for a regular file, l for a symbolic link. 'u' selects for user, 'g' for groups 'o' for others, and 'a' for all three.
+---
+# using the commands
+---
+# File management. 
+chmod u+x (gives user permission to execute a file) notes.txt 
+chmod g-r (denies group to read a file) notes.txt
+
+# Octal mode 
+use digits to set permissions. 
+* 4 for read 
+* 2 for write 
+* 1 for execute 
+* 0 for no permissions 
+
+# Ownership permissions 
+we use chown (change owner) to change owner of a file. Example --sudo chown josh file.txt-- the owner of this file is now josh
+to change both user and group we can simply do this 
+-sudo chown taas:developers file.txt
+
+# Umask
+takes away the permission when a file is created for example file.txt has rwx for every class running umask will take away some of the permission depends on how we set it
+for example umask 022 
+
+# SetUID 
+it is a special file permission that allows a user to run an executable file with the privileges of a file owner 
+chmod u+s file.txt 

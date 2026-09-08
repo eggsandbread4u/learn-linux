@@ -4,7 +4,7 @@ User management allows us to create multiples user on linux using user managemen
 we are in a linux terminal while a group is basically identify which team we belong to and what permissions we have. A root user have privilege to not only control users but also have access to system file 
 while a standard user can mess around with personal files. Using Sudo command can actually give a standard user root privileges. '
 
---- 
+ 
 # Tools 
 * Useradd: adds a user
 * Userdel: deletes a user
@@ -66,6 +66,9 @@ others = 5 (4+1)
 we use chown (change owner) to change owner of a file. Example --sudo chown josh file.txt-- the owner of this file is now josh
 to change both user and group we can simply do this 
 -sudo chown taas:developers file.txt
+
+<img width="568" height="339" alt="Screenshot 2026-09-08 220621" src="https://github.com/user-attachments/assets/7f9d0ea5-61a7-4790-be0c-cc5a36aab140" />
+
 
 ---
 # Umask

@@ -112,3 +112,43 @@ Linux uses a single hierarchical tree structure starting from the root directory
 * **`tr`** — Translate, squeeze, or delete specific characters from standard input (`stdin`).
 * **`wc`** — Print line, word, and byte/character counts for files.
 * **`apropos [keyword]`** — Search manual pages for short descriptions matching a keyword.
+
+# Process-status-in-linux
+Understanding how we can monitor processes and programs running inside linux using PS
+
+# PS (Process status):
+It records and shows every program running inside the operating system. It consists of how much memory a program is using, PID, status of a program
+
+<img width="638" height="394" alt="Screenshot 2026-09-09 133107" src="https://github.com/user-attachments/assets/a794837a-f246-4d86-83a7-2ed67bb2bb5f" />
+This is similiar to a windows task manager. We run ps aux which shows us the process currently running. 
+* PID: A unique numerical value for the process
+* STAT: shows current status of a program. (s = sleeping, R = running, T = stopped)
+* VSZ: Virtual memory size. The total amount of memory the process think it can handle.
+* RSS: Resident set size. Represents the actual physical RAM used by processer 
+* TTY: Tells us if a terminal is controlling a program. '?' means no terminal is assoicated with a program.
+
+---
+
+# Top 
+Top is the same as ps but it shows process and monitor them in real-time.
+q
+<img width="623" height="444" alt="Screenshot 2026-09-09 134155" src="https://github.com/user-attachments/assets/089cb894-f07c-412d-b878-656556b871bf" />
+
+# Process creation (Parent-child): 
+Almost every process is created by another process known as parent. Process creation follows parent and child relationship using fork() and exec(). Fork() creates a child process from the parent process and then exec() is used to wipe out the cloned memory and replaces it with the actual new program you want to run. 
+ 
+# Identity of a process (PID, PPID)
+PID is the unique numeric ID assigned to every process. PPID is the parent ID this tells us that a child ID was created from this particular parent ID. 
+
+<img width="639" height="227" alt="Screenshot 2026-09-09 135443" src="https://github.com/user-attachments/assets/2cbee0bf-99a0-4da9-9f55-a080691182de" />
+
+---
+# Kernel
+Kernel is the essential core of a linux operating system. It starts loading as soon as the computer boots up. It manages memory, allocation, CPU, time, processes, and storage. 
+
+# How commands work with the help of kernel
+Programs and commands do not have access to hard disk of a computer so it sends a 'syscall' request to kernel and then kernel perform the task on their behalf. 
+ 
+
+
+  
